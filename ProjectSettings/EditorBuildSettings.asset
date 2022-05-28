@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/WallScene.unity
     guid: 891979b4d0ec5914a96a0e997a83ff09
+  - enabled: 1
+    path: Assets/Scenes/AdamsScene.unity
+    guid: 87dc935d9449aa9439ec915888d98f94
   m_configObjects: {}
