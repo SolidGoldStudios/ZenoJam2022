@@ -737,14 +737,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lightbox (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 6658922108645647395, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6658922108645647395, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 6658922108645647399, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
       propertyPath: m_RootOrder
       value: 5
