@@ -42,6 +42,9 @@ public class Laserbeam : MonoBehaviour
             if (Physics.Raycast(rayOrigin, mainCamera.transform.forward, out hit, laserRange))
             {
                 laserBeam.SetPosition(1, hit.point);
+                Debug.Log(hit.transform.gameObject.name);
+                LightUp lightUp = hit.transform.GetComponent<LightUp>();
+                if (lightUp) lightUp.Glow();
             }
             else
             {

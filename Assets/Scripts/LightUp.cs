@@ -5,32 +5,25 @@ using UnityEngine;
 public class LightUp : MonoBehaviour
 {
     public Material mat;
-    Color color;
+    public Color color;
     float intensity = 0;
 
     void Start()
     {
-        color = mat.GetColor("_EmissionColor");
         mat.SetColor("_EmissionColor", Color.black);
-        StartCoroutine(DelayAndGlow());
     }
 
-    void Update()
+    public void Glow()
     {
-        // intensity += 0.1f * Time.deltaTime;
-        // if (intensity > 1f) intensity = 0;
-
-        // mat.SetColor("_EmissionColor", color * intensity);
+        StartCoroutine("GlowRoutine");
     }
 
-    IEnumerator DelayAndGlow()
+    IEnumerator GlowRoutine()
     {
-        yield return new WaitForSeconds(5);
-
         for (int i = 0; i < 10; i++) {
             intensity += 0.1f;
             mat.SetColor("_EmissionColor", color * intensity);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.03f);
         }
     }
 }
