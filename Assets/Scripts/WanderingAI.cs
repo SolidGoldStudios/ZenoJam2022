@@ -31,9 +31,10 @@ public class WanderingAI : MonoBehaviour {
  
         if (lightUp.intensity > 0.5f) {
             animator.SetBool("moving", true);
-            // NavMeshHit navHit;
-            // NavMesh.SamplePosition(lightPosition, out navHit, wanderRadius, -1);
-            agent.SetDestination(lightPosition);
+            NavMeshHit navHit;
+            NavMesh.SamplePosition(lightPosition, out navHit, wanderRadius, -1);
+            // agent.SetDestination(lightPosition);
+            agent.SetDestination(navHit.position);
         } else if (timer >= wanderTimer) {
             animator.SetBool("moving", true);
             Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
