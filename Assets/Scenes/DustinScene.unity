@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 36ab84e7b78aa0e44aec0bfb7c519f4d, type: 2}
 --- !u!1 &169611136
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,6 +354,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lightbox (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6658922108645647395, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658922108645647395, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6658922108645647399, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -407,9 +415,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4220590940863941820, guid: e569c244f344e77479fdbdaad063fabb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220590940863941820, guid: e569c244f344e77479fdbdaad063fabb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4220590941145937004, guid: e569c244f344e77479fdbdaad063fabb, type: 3}
       propertyPath: m_Name
       value: Doorway
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220590941145937004, guid: e569c244f344e77479fdbdaad063fabb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220590941145937004, guid: e569c244f344e77479fdbdaad063fabb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4220590941145937007, guid: e569c244f344e77479fdbdaad063fabb, type: 3}
       propertyPath: m_RootOrder
@@ -457,6 +481,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e569c244f344e77479fdbdaad063fabb, type: 3}
+--- !u!1 &1515284450 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8390785030945888294, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
+  m_PrefabInstance: {fileID: 728899372}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1515284453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515284450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2e77da981658dd45ba0c9218b8b193c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wanderRadius: 10
+  wanderTimer: 7
+--- !u!195 &1515284454
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515284450}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1525484925
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +588,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1935075989
 Transform:
