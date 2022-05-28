@@ -26,7 +26,7 @@ public class LightUp : MonoBehaviour
 
     public void Glow()
     {
-        if (intensity < 3f) {
+        if (intensity < 1.5f) {
             intensity += 0.001f;
         }
     }

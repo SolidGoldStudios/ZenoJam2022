@@ -21,6 +21,7 @@ public class WanderingAI : MonoBehaviour {
         timer = wanderTimer;
         lightUp = lightTarget.GetComponent<LightUp>();
         lightPosition = lightTarget.transform.position;
+        lightPosition += Random.insideUnitSphere;
         lightPosition.y = transform.position.y;
     }
  
