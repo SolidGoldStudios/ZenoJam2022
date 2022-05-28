@@ -10,18 +10,21 @@ public class Laserbeam : MonoBehaviour
     public Camera mainCamera;
     public Transform laserOrigin;
     public VisualEffect sparks;
+    public VisualEffect newBeam;
     public float laserRange;
     public float laserDuration;
     public float fireRate = 0.2f;
     
     private LineRenderer laserBeam;
     private float fireTimer;
+    
 
     // private GameObject lastHit;
 
     void Awake()
     {
         laserBeam = GetComponent<LineRenderer>();
+        newBeam.SetFloat("Length", laserRange);
         // sparks.Stop();
     }
     
@@ -29,16 +32,19 @@ public class Laserbeam : MonoBehaviour
     void Update()
     {
         fireTimer += Time.deltaTime;
-
         if (Input.GetButtonDown("Fire1") && fireTimer > fireRate)
         {
-            laserBeam.enabled = true;
+            //laserBeam.enabled = true;
+            newBeam.SetFloat("Lifetime", .3f);
+            newBeam.Play();
         }
 
         if (Input.GetButtonUp("Fire1"))
         {
             laserBeam.enabled = false;
             fireTimer = 0;
+            newBeam.Stop();
+            newBeam.SetFloat("Lifetime", 0);
             // sparks.Stop();
             // lastHit = null;
         }
@@ -51,13 +57,20 @@ public class Laserbeam : MonoBehaviour
             beamPositions[0] = laserOrigin.position;
             Vector3 rayOrigin = mainCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hit;
-
+            
+            
             if (Physics.Raycast(rayOrigin, mainCamera.transform.forward, out hit, laserRange))
             {
                 //laserBeam.SetPosition(1, hit.point);
+                Vector3 distanceToHit = hit.point - newBeam.transform.position;
+                float distanceOnZ = Mathf.Abs(distanceToHit.z);
+                
+                newBeam.SetFloat("Length", distanceOnZ);
+                Debug.Log(distanceOnZ);
+                
                 beamPositions[1] = hit.point;
                 // sparks.transform.position = hit.point;
-                // sparks.Play();
+                
                 Debug.Log(hit.transform.gameObject.name);
                 // if (hit.transform.gameObject != lastHit) {
                     LightUp lightUp = hit.transform.GetComponent<LightUp>();
@@ -74,6 +87,7 @@ public class Laserbeam : MonoBehaviour
             }
             
             laserBeam.SetPositions(beamPositions);
+            newBeam.transform.position = laserOrigin.position;
         }
     }
     
