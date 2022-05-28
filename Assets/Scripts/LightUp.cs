@@ -15,15 +15,19 @@ public class LightUp : MonoBehaviour
 
     public void Glow()
     {
-        StartCoroutine("GlowRoutine");
+        if (intensity < 10f) {
+            intensity += 0.001f;
+            mat.SetColor("_EmissionColor", color * intensity);
+        }
+        // StartCoroutine("GlowRoutine");
     }
 
-    IEnumerator GlowRoutine()
-    {
-        for (int i = 0; i < 10; i++) {
-            intensity += 0.1f;
-            mat.SetColor("_EmissionColor", color * intensity);
-            yield return new WaitForSeconds(0.03f);
-        }
-    }
+    // IEnumerator GlowRoutine()
+    // {
+    //     for (int i = 0; i < 10; i++) {
+    //         intensity += 0.1f;
+    //         mat.SetColor("_EmissionColor", color * intensity);
+    //         yield return new WaitForSeconds(0.03f);
+    //     }
+    // }
 }
