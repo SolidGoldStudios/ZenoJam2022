@@ -6,28 +6,28 @@ public class LightUp : MonoBehaviour
 {
     public Material mat;
     public Color color;
-    float intensity = 0;
+    public float intensity = 0;
 
     void Start()
     {
         mat.SetColor("_EmissionColor", Color.black);
     }
 
-    public void Glow()
+    void Update()
     {
-        if (intensity < 10f) {
-            intensity += 0.001f;
-            mat.SetColor("_EmissionColor", color * intensity);
+        if (intensity > 0) {
+            intensity -= Time.deltaTime / 10;
+        } else {
+            intensity = 0;
         }
-        // StartCoroutine("GlowRoutine");
+
+        mat.SetColor("_EmissionColor", color * intensity);
     }
 
-    // IEnumerator GlowRoutine()
-    // {
-    //     for (int i = 0; i < 10; i++) {
-    //         intensity += 0.1f;
-    //         mat.SetColor("_EmissionColor", color * intensity);
-    //         yield return new WaitForSeconds(0.03f);
-    //     }
-    // }
+    public void Glow()
+    {
+        if (intensity < 3f) {
+            intensity += 0.001f;
+        }
+    }
 }
