@@ -14,6 +14,7 @@ public class Laserbeam : MonoBehaviour
     
     private LineRenderer laserBeam;
     private float fireTimer;
+    // private GameObject lastHit;
 
     void Awake()
     {
@@ -25,16 +26,20 @@ public class Laserbeam : MonoBehaviour
     {
         fireTimer += Time.deltaTime;
 
-        if (laserBeam.enabled)
-        {
-            Vector3 rayOrigin = mainCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0));
-            laserBeam.SetPosition(0, laserOrigin.position);
-            laserBeam.SetPosition(1, rayOrigin+(mainCamera.transform.forward * laserRange));
-        }
-        
         if (Input.GetButtonDown("Fire1") && fireTimer > fireRate)
         {
             laserBeam.enabled = true;
+        }
+
+        if (Input.GetButtonUp("Fire1"))
+        {
+            laserBeam.enabled = false;
+            fireTimer = 0;
+            // lastHit = null;
+        }
+
+        if (laserBeam.enabled)
+        {
             laserBeam.SetPosition(0, laserOrigin.position);
             Vector3 rayOrigin = mainCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hit;
@@ -43,19 +48,17 @@ public class Laserbeam : MonoBehaviour
             {
                 laserBeam.SetPosition(1, hit.point);
                 Debug.Log(hit.transform.gameObject.name);
-                LightUp lightUp = hit.transform.GetComponent<LightUp>();
-                if (lightUp) lightUp.Glow();
+                // if (hit.transform.gameObject != lastHit) {
+                    LightUp lightUp = hit.transform.GetComponent<LightUp>();
+                    if (lightUp) lightUp.Glow();
+
+                //     lastHit = hit.transform.gameObject;
+                // }
             }
             else
             {
                 laserBeam.SetPosition(1, rayOrigin+(mainCamera.transform.forward * laserRange));
             }
-        }
-
-        if (Input.GetButtonUp("Fire1"))
-        {
-            fireTimer = 0;
-            laserBeam.enabled = false;
         }
     }
     
