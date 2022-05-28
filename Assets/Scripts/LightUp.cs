@@ -27,7 +27,8 @@ public class LightUp : MonoBehaviour
     public void Glow()
     {
         if (intensity < 1.5f) {
-            intensity += 0.001f;
+            // intensity += 0.001f;
+            intensity += Time.deltaTime / 2;
         }
     }
 }
