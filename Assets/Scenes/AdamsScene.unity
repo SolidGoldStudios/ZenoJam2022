@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &16254727 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 973502668531127094, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
+  m_PrefabInstance: {fileID: 519387623}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &169611136
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,6 +167,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 390534797558504252, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
+      propertyPath: amplitude
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 390534797558504252, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
+      propertyPath: frequency
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 390534797558504252, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 16254727}
+    - target: {fileID: 390534797558504252, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
+      propertyPath: stabilizerDistance
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 973502668456243139, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
       propertyPath: m_Name
       value: Player
