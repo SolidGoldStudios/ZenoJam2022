@@ -59,7 +59,7 @@ public class HeadBobber : MonoBehaviour
 
     private void PlayMotion(Vector3 motion)
     {
-        mainCamera.localPosition += motion;
+        mainCamera.localPosition += motion * Time.deltaTime;
     }
     
     private void ResetPosition()
@@ -72,7 +72,7 @@ public class HeadBobber : MonoBehaviour
     {
         Vector3 pos = Vector3.zero;
         pos.y += Mathf.Sin(Time.time * frequency) * amplitude;
-        pos.x += Mathf.Cos(Time.time * frequency / 2) * amplitude * 2;
+        pos.x += Mathf.Cos(Time.time * frequency) * amplitude;
         return pos;
     }
 

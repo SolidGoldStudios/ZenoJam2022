@@ -4946,10 +4946,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3508e8687e202f54e931efcca0493331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enabled: 1
-  amplitude: 0.22
-  frequency: 10
-  mainCamera: {fileID: 0}
+  bobEnabled: 1
+  amplitude: 0.01
+  frequency: 20
+  stabilizerDistance: 20
+  mainCamera: {fileID: 973502668531127094}
   cameraHolder: {fileID: 6015116153722846638}
 --- !u!1 &973502668478538938
 GameObject:
