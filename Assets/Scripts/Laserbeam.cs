@@ -22,7 +22,7 @@ public class Laserbeam : MonoBehaviour
     void Awake()
     {
         laserBeam = GetComponent<LineRenderer>();
-        sparks.Stop();
+        // sparks.Stop();
     }
     
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class Laserbeam : MonoBehaviour
         {
             laserBeam.enabled = false;
             fireTimer = 0;
-            sparks.Stop();
+            // sparks.Stop();
             // lastHit = null;
         }
         
@@ -56,8 +56,8 @@ public class Laserbeam : MonoBehaviour
             {
                 //laserBeam.SetPosition(1, hit.point);
                 beamPositions[1] = hit.point;
-                sparks.transform.position = hit.point;
-                sparks.Play();
+                // sparks.transform.position = hit.point;
+                // sparks.Play();
                 Debug.Log(hit.transform.gameObject.name);
                 // if (hit.transform.gameObject != lastHit) {
                     LightUp lightUp = hit.transform.GetComponent<LightUp>();
@@ -70,7 +70,7 @@ public class Laserbeam : MonoBehaviour
             {
                 //laserBeam.SetPosition(1, rayOrigin+(mainCamera.transform.forward * laserRange));
                 beamPositions[1] = rayOrigin + (mainCamera.transform.forward * laserRange);
-                sparks.Stop();
+                // sparks.Stop();
             }
             
             laserBeam.SetPositions(beamPositions);
