@@ -7,17 +7,14 @@ public class PickableItem : MonoBehaviour
     public bool isBattery;
     public bool isGlowStick;
     public int numItems;
-    
 
-    void Start() {
-        Debug.Log("started!");
-    }
 
-    void OnCollisionEnter(Collision collision) {
+    void OnTriggerEnter(Collider collider) {
         Debug.Log("Entered the collision");
+        Destroy(gameObject);
     }
 
-    void OnCollisionExit(Collision collision) {
-        Debug.Log("Exited the collision");
-    }
+    // void OnTriggerExit(Collider collider) {
+    //     Debug.Log("Exited the collision");
+    // }
 }
