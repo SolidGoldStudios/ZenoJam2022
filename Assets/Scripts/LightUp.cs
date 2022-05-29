@@ -31,7 +31,10 @@ public class LightUp : MonoBehaviour
 
             mat.SetColor("_EmissionColor", color * intensity);
 
-            if (audioSource) audioSource.mute = intensity < 1f;
+            if (audioSource) {
+                audioSource.mute = intensity < 1f;
+                audioSource.volume = (intensity - 1f) / 2f;
+            }
         }
     }
 
@@ -52,7 +55,11 @@ public class LightUp : MonoBehaviour
                 if (lu) lu.SwitchOn();
             }
 
-            if (audioSource) audioSource.mute = intensity < 1f;
+            if (audioSource) {
+                audioSource.mute = intensity < 1f;
+                audioSource.volume = (intensity - 1f) / 2f;
+            }
+
             switchFlipped = true;
         }
     }
@@ -62,6 +69,18 @@ public class LightUp : MonoBehaviour
         switchFlipped = true;
         intensity = 3f;
         mat.SetColor("_EmissionColor", color * intensity);
-        if (audioSource) audioSource.mute = false;
+        if (audioSource) {
+            audioSource.mute = false;
+            audioSource.volume = 0;
+            StartCoroutine(FadeIn());
+        }
+    }
+
+    IEnumerator FadeIn()
+    {
+        for (int i = 0; i < 100; i++) {
+            audioSource.volume = (float)i / 100f;
+            yield return new WaitForEndOfFrame();
+        }
     }
 }
