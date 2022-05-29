@@ -13,12 +13,15 @@ public class LightUp : MonoBehaviour
 
     private bool switchFlipped = false;
     private AudioSource audioSource;
+    private Light[] lights;
 
     void Start()
     {
         mat = gameObject.GetComponent<MeshRenderer>().material;
         mat.SetColor("_EmissionColor", Color.black);
         audioSource = gameObject.GetComponent<AudioSource>();
+        lights = gameObject.GetComponentsInChildren<Light>();
+        foreach (Light light in lights) light.intensity = 0;
     }
 
     void Update()
@@ -30,6 +33,8 @@ public class LightUp : MonoBehaviour
             if (intensity < 0) intensity = 0;
 
             mat.SetColor("_EmissionColor", color * intensity);
+
+            foreach (Light light in lights) light.intensity = Mathf.Clamp((intensity - 1) * 5, 0, 10);
 
             if (audioSource) {
                 audioSource.mute = intensity < 1f;
@@ -69,6 +74,9 @@ public class LightUp : MonoBehaviour
         switchFlipped = true;
         intensity = 3f;
         mat.SetColor("_EmissionColor", color * intensity);
+
+        foreach (Light light in lights) light.intensity = 2;
+
         if (audioSource) {
             audioSource.mute = false;
             audioSource.volume = 0;
