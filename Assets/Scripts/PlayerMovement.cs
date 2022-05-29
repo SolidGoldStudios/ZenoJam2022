@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 move;
     private Vector3 velocity;
     private bool isGrounded;
-
     void Awake() {
         QualitySettings.vSyncCount = 0;  // VSync must be disabled
         Application.targetFrameRate = 60;
@@ -34,13 +34,6 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = -2f;
         }
         
-        // Get inputs from keyboard or controller
-        //float x = Input.GetAxis("Horizontal");
-        //float z = Input.GetAxis("Vertical");
-
-        //move = (transform.right * x) + (transform.forward * z);
-            
-        //controller.SimpleMove(Time.deltaTime * move * speed);
         Vector3 movement = Vector3.zero;
 
         if ((Input.GetButton("Horizontal") || Input.GetButton("Vertical")) && isGrounded)

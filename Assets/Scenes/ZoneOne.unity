@@ -198,7 +198,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2228700299568389088, guid: 9580245ee7e8e4178b4b67c442ef7dd0, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2228700299568389088, guid: 9580245ee7e8e4178b4b67c442ef7dd0, type: 3}
       propertyPath: m_LocalScale.x
@@ -336,7 +336,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2228700299568389088, guid: 9580245ee7e8e4178b4b67c442ef7dd0, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 2228700299568389088, guid: 9580245ee7e8e4178b4b67c442ef7dd0, type: 3}
       propertyPath: m_LocalScale.x
@@ -1574,9 +1574,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lightbox
       objectReference: {fileID: 0}
+    - target: {fileID: 6658922108645647398, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
+      propertyPath: duration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6658922108645647399, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6658922108645647399, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
       propertyPath: m_LocalScale.x
@@ -1641,7 +1645,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2228700299568389088, guid: 9580245ee7e8e4178b4b67c442ef7dd0, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2228700299568389088, guid: 9580245ee7e8e4178b4b67c442ef7dd0, type: 3}
       propertyPath: m_LocalScale.x
@@ -2005,7 +2009,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2228700299568389088, guid: 9580245ee7e8e4178b4b67c442ef7dd0, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 2228700299568389088, guid: 9580245ee7e8e4178b4b67c442ef7dd0, type: 3}
       propertyPath: m_LocalScale.x
@@ -2367,7 +2371,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &824348406
 PrefabInstance:
@@ -2592,9 +2596,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lightbox (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6658922108645647398, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
+      propertyPath: duration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6658922108645647399, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 6658922108645647399, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
       propertyPath: m_LocalScale.x
@@ -3015,6 +3023,10 @@ PrefabInstance:
     - target: {fileID: 973502668456243148, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1415395263838933362, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
+      propertyPath: mouseSense
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
@@ -4570,7 +4582,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2228700299568389088, guid: 9580245ee7e8e4178b4b67c442ef7dd0, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2228700299568389088, guid: 9580245ee7e8e4178b4b67c442ef7dd0, type: 3}
       propertyPath: m_LocalScale.x
@@ -5347,7 +5359,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6658922109399612869
 MonoBehaviour:
@@ -5363,5 +5375,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 0.06752478, g: 0, b: 0.8207547, a: 0}
   intensity: 0
+  duration: 15
   isSwitch: 1
   switchTarget: {fileID: 1481649610}
