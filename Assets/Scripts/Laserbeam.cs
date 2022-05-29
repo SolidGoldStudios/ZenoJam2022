@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -24,6 +25,7 @@ public class Laserbeam : MonoBehaviour
     private LineRenderer laserBeam;
     private float fireTimer;
     private bool laserOff = true;
+    private Transform lastHit;
     
 
     // private GameObject lastHit;
@@ -38,6 +40,13 @@ public class Laserbeam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (lastHit != null)
+        {
+            var hitMeshRenderer = lastHit.GetComponent<MeshRenderer>();
+            hitMeshRenderer.enabled = false;
+            lastHit = null;
+        }
+        
         fireTimer += Time.deltaTime;
         if (Input.GetButtonDown("Fire1") && fireTimer > fireRate && powerDisplay.Get() > 0)
         {
@@ -60,7 +69,6 @@ public class Laserbeam : MonoBehaviour
             //beamOff.Play();
             beamSound.Stop();
             beamBurn.Stop();
-            // lastHit = null;
         }
 
         if (laserBeam.enabled)
@@ -77,13 +85,25 @@ public class Laserbeam : MonoBehaviour
                 sparks.transform.position = hit.point;
                 sparks.Play();
 
+                // Hit detection for spider shields
+                var hitObject = hit.transform;
+                if (hitObject.CompareTag("Spider"))
+                {
+                    var hitMeshRenderer = hitObject.GetComponent<MeshRenderer>();
+                    if (hitMeshRenderer != null)
+                    {
+                        hitMeshRenderer.enabled = true;
+                    }
+
+                    lastHit = hit.transform;
+                }
+                
+                
                 Debug.Log(hit.transform.gameObject.name);
                 // if (hit.transform.gameObject != lastHit) {
                 LightUp lightUp = hit.transform.GetComponent<LightUp>();
                 if (lightUp) lightUp.Glow();
-
-                //     lastHit = hit.transform.gameObject;
-                // }
+                
             }
             else
             {
