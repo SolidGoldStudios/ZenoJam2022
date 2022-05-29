@@ -7,6 +7,7 @@ public class LightUp : MonoBehaviour
     private Material mat;
     public Color color;
     public float intensity = 0;
+    public float duration;
     public bool isSwitch;
     public GameObject switchTarget;
 
@@ -20,10 +21,10 @@ public class LightUp : MonoBehaviour
 
     void Update()
     {
-        if (intensity > 0) {
-            intensity -= Time.deltaTime / 10;
+        if (intensity > 0 && !switchFlipped) {
+            intensity -= Time.deltaTime * 3 / duration;
 
-            if (intensity < 0.5f && isSwitch && switchFlipped) intensity = 0.5f;
+            if (intensity < 1f && isSwitch && switchFlipped) intensity = 1f;
             if (intensity < 0) intensity = 0;
 
             mat.SetColor("_EmissionColor", color * intensity);
@@ -32,12 +33,12 @@ public class LightUp : MonoBehaviour
 
     public void Glow()
     {
-        if (intensity < 1.5f) {
+        if (intensity < 3f) {
             // intensity += 0.001f;
-            intensity += Time.deltaTime / 2;
+            intensity += Time.deltaTime;
         }
 
-        if (intensity > 0.5f && isSwitch && !switchFlipped) {
+        if (intensity > 1f && isSwitch && !switchFlipped) {
             MoveableObject mov = switchTarget.GetComponent<MoveableObject>();
             if (mov) mov.Move();
 
