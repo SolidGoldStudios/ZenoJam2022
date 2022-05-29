@@ -21,20 +21,39 @@ public class Laserbeam : MonoBehaviour
     public AudioSource beamBurn;
 
     public PowerDisplay powerDisplay;
-    
-    private LineRenderer laserBeam;
-    private float fireTimer;
-    private bool laserOff = true;
-    private Transform lastHit;
-    
 
-    // private GameObject lastHit;
+    private LineRenderer laserBeam;
+    private Transform lastHit;
+
 
     void Awake()
     {
         laserBeam = GetComponent<LineRenderer>();
         powerDisplay.Start();
         sparks.Stop();
+        beamOn.Stop();
+        beamSound.Stop();
+        beamOff.Stop();
+        beamBurn.Stop();
+    }
+
+    void LaserOn()
+    {
+        laserBeam.enabled = true;
+        Debug.Log("LaserOn calling beamOn.Play next");
+        beamOn.Play();
+        beamSound.Play();
+        beamBurn.Play();
+    }
+
+    void LaserOff()
+    {
+        laserBeam.enabled = false;
+        sparks.Stop();
+        Debug.Log("LaserOff calling beamOn.Play next");
+        beamOn.Play();
+        beamSound.Stop();
+        beamBurn.Stop();
     }
 
     // Update is called once per frame
@@ -46,29 +65,16 @@ public class Laserbeam : MonoBehaviour
             hitMeshRenderer.enabled = false;
             lastHit = null;
         }
-        
-        fireTimer += Time.deltaTime;
-        if (Input.GetButtonDown("Fire1") && fireTimer > fireRate && powerDisplay.Get() > 0)
+
+        if (!laserBeam.enabled && Input.GetButtonDown("Fire1") && powerDisplay.Get() > 0 && Time.deltaTime > 0)
         {
-            laserBeam.enabled = true;
-            beamOn.Play();
-            beamSound.Play();
-            beamBurn.Play();
+            Debug.Log("Turning laser on");
+            LaserOn();
         }
 
-        if (powerDisplay.Get() == 0)
+        if (laserBeam.enabled && (powerDisplay.Get() == 0 || Input.GetButtonUp("Fire1")))
         {
-            laserBeam.enabled = false;
-        }
-
-        if (Input.GetButtonUp("Fire1"))
-        {
-            fireTimer = 0;
-            laserBeam.enabled = false;
-            sparks.Stop();
-            beamOff.Play();
-            beamSound.Stop();
-            beamBurn.Stop();
+            LaserOff();
         }
 
         if (laserBeam.enabled)
@@ -77,9 +83,8 @@ public class Laserbeam : MonoBehaviour
             Vector3[] beamPositions = new Vector3[laserBeam.positionCount];
             beamPositions[0] = laserOrigin.position;
             Vector3 rayOrigin = mainCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0));
-            RaycastHit hit;
 
-            if (Physics.Raycast(rayOrigin, mainCamera.transform.forward, out hit, laserRange))
+            if (Physics.Raycast(rayOrigin, mainCamera.transform.forward, out RaycastHit hit, laserRange))
             {
                 beamPositions[1] = hit.point;
                 sparks.transform.position = hit.point;
@@ -97,13 +102,10 @@ public class Laserbeam : MonoBehaviour
 
                     lastHit = hit.transform;
                 }
-                
-                
-                Debug.Log(hit.transform.gameObject.name);
-                // if (hit.transform.gameObject != lastHit) {
+
                 LightUp lightUp = hit.transform.GetComponent<LightUp>();
                 if (lightUp) lightUp.Glow();
-                
+
             }
             else
             {

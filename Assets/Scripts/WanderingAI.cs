@@ -35,7 +35,7 @@ public class WanderingAI : MonoBehaviour {
             NavMesh.SamplePosition(lightPosition, out navHit, wanderRadius, -1);
             // agent.SetDestination(lightPosition);
             agent.SetDestination(navHit.position);
-        } else if (timer >= wanderTimer) {
+        } else if (timer >= wanderTimer * Random.Range(0f, 1f)) {
             animator.SetBool("moving", true);
             animator.SetBool("dancing", false);
             Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);

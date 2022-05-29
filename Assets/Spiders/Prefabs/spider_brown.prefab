@@ -2031,7 +2031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e77da981658dd45ba0c9218b8b193c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wanderRadius: 2
+  wanderRadius: 5
   wanderTimer: 5
   lightTarget: {fileID: 0}
 --- !u!195 &1515284454
