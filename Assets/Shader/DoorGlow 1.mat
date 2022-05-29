@@ -47,7 +47,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Fresnel_Power: 1.79
+    - _Fresnel_Power: 3.07
     - _Offset: 0.5
     - _QueueControl: 0
     - _QueueOffset: 0
