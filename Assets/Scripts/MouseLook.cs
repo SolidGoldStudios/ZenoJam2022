@@ -4,29 +4,23 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-
-    public float mouseSense = 1500f;
+    public float mouseSense = 200f;
     public Transform playerBody;
 
     float xRotation = 0f;
-    bool tracking = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // if (Input.GetButtonDown("Fire1")) tracking = true;
-
-        // if (!tracking) return;
-        
         float mouseX = Input.GetAxis("Mouse X") * mouseSense * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSense * Time.deltaTime;
-        
+
+        if (Mathf.Abs(mouseX) > 500 || Mathf.Abs(mouseY) > 500) return;
+
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 

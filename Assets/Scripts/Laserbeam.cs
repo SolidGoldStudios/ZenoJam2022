@@ -66,7 +66,7 @@ public class Laserbeam : MonoBehaviour
             fireTimer = 0;
             laserBeam.enabled = false;
             sparks.Stop();
-            //beamOff.Play();
+            beamOff.Play();
             beamSound.Stop();
             beamBurn.Stop();
         }

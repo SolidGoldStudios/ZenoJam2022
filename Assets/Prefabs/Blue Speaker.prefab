@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8210871744164594039}
   - component: {fileID: 6203170897678431677}
   - component: {fileID: 4744404429861205730}
+  - component: {fileID: 518432184}
   m_Layer: 0
   m_Name: Blue Speaker
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5554885992177357928}
-  m_LocalRotation: {x: -0.50405127, y: -0.5040514, z: 0.49591556, w: 0.49591556}
+  m_LocalRotation: {x: -0.50405, y: -0.50405, z: 0.49591696, w: 0.49591696}
   m_LocalPosition: {x: -20.123837, y: 4.25, z: 23.237213}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
@@ -97,3 +98,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.695494, z: 1.219054}
   m_Center: {x: 0, y: 0, z: 0.00000047683716}
+--- !u!114 &518432184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5554885992177357928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b01d2ceb2a13bc947965cd5b94361366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0, g: 0.7046585, b: 0.9622642, a: 0}
+  intensity: 0
+  duration: 15
+  isSwitch: 0
+  switchTarget: {fileID: 0}
