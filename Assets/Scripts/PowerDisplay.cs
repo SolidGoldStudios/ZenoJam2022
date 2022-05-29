@@ -85,6 +85,35 @@ public class PowerDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Debug/Testing Helpers
+        // Reset power
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            Set(100);
+            SetText($"{startingText} {Math.Round(currentPower)}");
+        }
+
+        // Increase power
+        if (Input.GetKey(KeyCode.X))
+        {
+            Increase(1);
+            SetText($"{startingText} {Math.Round(currentPower)}");
+        }
+
+        // Decrease power
+        if (Input.GetKey(KeyCode.Z))
+        {
+            Decrease(1);
+            SetText($"{startingText} {Math.Round(currentPower)}");
+        }
+
+        // Set to one
+        if (Input.GetKey(KeyCode.C))
+        {
+            Set(1);
+            SetText($"{startingText} {Math.Round(currentPower)}");
+        }
+
         if (currentPower == 0)
         {
             powerText.fontMaterial.SetFloat("_GlowPower", 1);
@@ -100,31 +129,6 @@ public class PowerDisplay : MonoBehaviour
         {
             Set(rechargeAmount);
             SetText($"{startingText} {Math.Round(currentPower)}");
-        }
-
-        // Debug/Testing Helpers
-        // Reset power
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            Set(100);
-        }
-
-        // Increase power
-        if (Input.GetKey(KeyCode.X))
-        {
-            Increase(1);
-        }
-
-        // Decrease power
-        if (Input.GetKey(KeyCode.Z))
-        {
-            Decrease(1);
-        }
-
-        // Set to one
-        if (Input.GetKey(KeyCode.C))
-        {
-            Set(1);
         }
     }
 
