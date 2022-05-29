@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pickup
+  - Laser
+  - Spider
   layers:
   - Default
   - TransparentFX
