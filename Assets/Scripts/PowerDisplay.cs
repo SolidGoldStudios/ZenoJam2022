@@ -1,41 +1,59 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PowerDisplay : MonoBehaviour
 {
-
     public TextMeshProUGUI powerText;
-    public string startingText;
     public float maxPower;
+    public string startingText;
     public float startingPower;
-    public float currentPower;
+    public float rechargeAmount;
+    public int rechargeDelay;
 
     // Internal vars
-    private float newPower;
+    private readonly float minPower = 0;
+    private float currentPower;
+    private DateTime rechargeTime;
 
     public void Start()
     {
-        Debug.Log("Starting PowerDisplay");
         Reset();
-        Set(startingPower);
     }
 
     void Reset()
     {
-        Debug.Log("Resetting PowerDisplay");
-        SetText(startingText);
+        SetText($"{startingText} {maxPower}");
+        Set(maxPower);
     }
 
     void SetText(string text)
     {
-        Debug.Log($"Setting PowerDisplay text to {text}");
         powerText.text = text;
+    }
+
+    public void Set(float amount)
+    {
+        if (amount > maxPower)
+        {
+            currentPower = maxPower;
+            return;
+        }
+
+        if (amount < minPower)
+        {
+            currentPower = minPower;
+            rechargeTime = DateTime.Now.AddSeconds(rechargeDelay);
+            return;
+        }
+
+        currentPower = amount;
+
+        if (currentPower == minPower)
+        {
+            rechargeTime = DateTime.Now.AddSeconds(rechargeDelay);
+        }
+
     }
 
     public float Get()
@@ -43,51 +61,47 @@ public class PowerDisplay : MonoBehaviour
         return currentPower;
     }
 
-    public void Set(float amount)
-    {
-        newPower = currentPower + amount;
-        if (newPower > maxPower)
-        {
-            newPower = maxPower;
-        }
-
-        currentPower = newPower;
-        SetText($"{startingText} {currentPower}");
-    }
-
     public void Increase(float amount)
     {
-        newPower = currentPower + amount;
-        if (newPower > maxPower)
-        {
-            newPower = maxPower;
-        }
-        currentPower = newPower;
+        Set(currentPower + amount);
         SetText($"{startingText} {Math.Round(currentPower)}");
     }
 
     public void Decrease(float amount)
     {
-        if (currentPower == 0)
-        {
-            return;
-        }
-
-        newPower = currentPower - amount;
-        if (newPower < 0)
-        {
-            currentPower = 0;
-            SetText($"{startingText} {currentPower}");
-            return;
-        }
-
-        currentPower = newPower;
+        Set(currentPower - amount);
         SetText($"{startingText} {Math.Round(currentPower)}");
+    }
+
+    private bool ShouldRecharge(DateTime rt)
+    {
+        if (rt < DateTime.Now)
+        {
+            return true;
+        }
+        return false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (currentPower == 0)
+        {
+            powerText.fontMaterial.SetFloat("_GlowPower", 1);
+            powerText.UpdateMeshPadding();
+        }
+        else
+        {
+            powerText.fontMaterial.SetFloat("_GlowPower", 0);
+            powerText.UpdateMeshPadding();
+        }
+
+        if (currentPower == minPower && ShouldRecharge(rechargeTime))
+        {
+            Set(rechargeAmount);
+            SetText($"{startingText} {Math.Round(currentPower)}");
+        }
+
         // Debug/Testing Helpers
         // Reset power
         if (Input.GetKeyDown(KeyCode.M))
@@ -107,55 +121,152 @@ public class PowerDisplay : MonoBehaviour
             Decrease(1);
         }
 
-        if (currentPower == 0)
+        // Set to one
+        if (Input.GetKey(KeyCode.C))
         {
-            powerText.fontMaterial.SetFloat("_GlowPower", 1);
-            powerText.UpdateMeshPadding();
-        }
-        else
-        {
-            powerText.fontMaterial.SetFloat("_GlowPower", 0);
-            powerText.UpdateMeshPadding();
+            Set(1);
         }
     }
 
-    [ContextMenu("TestPowerDecrease")]
-    void TestPowerDecrease()
+
+    [ContextMenu("TestAll")]
+    void TestAll()
     {
-        Debug.Log($"Testing Decrease Power");
-        Start();
+        TestSet();
+        TestIncrease();
+        TestDecrease();
+        TestShouldRecharge();
+    }
 
-        // Do not decrease if already at 0
-        // Starting 0, decrease by 10
-        float expected = 0;
-        Set(0);
-        Decrease(10);
-        if (currentPower != expected)
+    [ContextMenu("TestSet")]
+    void TestSet()
+    {
+        Debug.Log($"Testing Set");
+
+        string testName = "cannot set over maximum";
+        float setPower = 9001;
+        float expected = 100;
+        Set(setPower);
+        if (Get() != expected)
         {
-            Debug.LogError($"unexpected result when decreasing 10 from 100! want: {expected}, got: {currentPower}");
+            Debug.LogError($"TestSet case: \"{testName}\" failed! want: {expected}, got: {currentPower}");
         }
+        Reset();
 
-        // Do not decrease below 0
-        // Starting 10, decrease by 15
+        testName = "cannot set below zero";
+        setPower = -10;
         expected = 0;
-        Set(10);
-        Decrease(15);
-        if (currentPower != expected)
+        Set(setPower);
+        if (Get() != expected)
         {
-            Debug.LogError($"unexpected result when decreasing to negative value! want: {expected}, got: {currentPower}");
+            Debug.LogError($"TestSet case: \"{testName}\" failed! want: {expected}, got: {currentPower}");
+        }
+        Reset();
+    }
+
+    [ContextMenu("TestIncrease")]
+    void TestIncrease()
+    {
+        Debug.Log($"Testing Increase Power");
+
+        string testName = "do not increase if already at 100";
+        float expected = 100;
+        Start();
+        Increase(10);
+        if (Get() != expected)
+        {
+            Debug.LogError($"TestIncrease case: \"{testName}\" failed! want: {expected}, got: {currentPower}");
         }
 
-        // Standard decrease
-        // Starting 100, decrease by 10
-        expected = 90;
-        Set(100);
-        Decrease(10);
-        if (currentPower != expected)
+
+        testName = "max power caps at 100";
+        expected = 100;
+        Start();
+        Set(90);
+        Increase(25);
+        if (Get() != expected)
         {
-            Debug.LogError($"unexpected result when decreasing 10 from 100! want: {expected}, got: {currentPower}");
+            Debug.LogError($"TestIncrease case: \"{testName}\" failed! want: {expected}, got: {currentPower}");
+        }
+
+        testName = "successful decrease";
+        expected = 75;
+        Start();
+        Set(50);
+        Increase(25);
+        if (Get() != expected)
+        {
+            Debug.LogError($"TestIncrease case: \"{testName}\" failed! want: {expected}, got: {currentPower}");
         }
 
         Reset();
+    }
+
+    [ContextMenu("TestDecrease")]
+    void TestDecrease()
+    {
+        Debug.Log($"Testing Decrease Power");
+
+        string testName = "do not decrease if already at 0";
+        float expected = 0;
+        Start();
+        Set(0);
+        Decrease(10);
+        if (Get() != expected)
+        {
+            Debug.LogError($"TestDecrease case: \"{testName}\" failed! want: {expected}, got: {currentPower}");
+        }
+
+
+        testName = "do not decrease if already at 0";
+        expected = 0;
+        Start();
+        Set(10);
+        Decrease(15);
+        if (Get() != expected)
+        {
+            Debug.LogError($"TestDecrease case: \"{testName}\" failed! want: {expected}, got: {currentPower}");
+        }
+
+        testName = "successful decrease";
+        expected = 90;
+        Start();
+        Set(100);
+        Decrease(10);
+        if (Get() != expected)
+        {
+            Debug.LogError($"TestDecrease case: \"{testName}\" failed! want: {expected}, got: {currentPower}");
+        }
+
+        Reset();
+    }
+
+    [ContextMenu("TestShouldRecharge")]
+    void TestShouldRecharge()
+    {
+        Debug.Log($"Testing Increase Power");
+
+        DateTime rechargeTime;
+        bool expected;
+        bool actual;
+
+        string testName = "should not recharge";
+        rechargeTime = DateTime.Now;
+        expected = false;
+        actual = ShouldRecharge(rechargeTime);
+        if (expected != actual)
+        {
+            Debug.LogError($"TestShouldRecharge case: \"{testName}\" failed! want: {expected}, got: {currentPower}: rechargeTime: {rechargeTime} nowTime: {DateTime.Now}");
+        }
+
+        testName = "should recharge";
+        rechargeTime = DateTime.Now.AddSeconds(-rechargeDelay - 2);
+        expected = true;
+        actual = ShouldRecharge(rechargeTime);
+        if (expected != actual)
+        {
+            Debug.LogError($"TestShouldRecharge case: \"{testName}\" failed! want: {expected}, got: {currentPower}: rechargeTime: {rechargeTime} nowTime: {DateTime.Now}");
+        }
     }
 }
 
