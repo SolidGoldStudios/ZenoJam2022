@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class PickableItem : MonoBehaviour
 {
-    public bool isBattery;
-    public bool isGlowStick;
-    public int numItems;
 
+    public float batteryValue;
+    public PowerDisplay powerDisplay;
 
-    void OnTriggerEnter(Collider collider) {
-        Debug.Log("Entered the collision");
+    void OnTriggerEnter(Collider collider)
+    {
+        powerDisplay.Increase(batteryValue);
+
         Destroy(gameObject);
     }
-
-    // void OnTriggerExit(Collider collider) {
-    //     Debug.Log("Exited the collision");
-    // }
 }

@@ -18,6 +18,11 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 move;
     private Vector3 velocity;
     private bool isGrounded;
+
+    void Awake() {
+        QualitySettings.vSyncCount = 0;  // VSync must be disabled
+        Application.targetFrameRate = 60;
+    }
     
     // Update is called once per frame
     void Update()
