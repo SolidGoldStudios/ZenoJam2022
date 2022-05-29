@@ -31,11 +31,16 @@ public class Laserbeam : MonoBehaviour
         laserBeam = GetComponent<LineRenderer>();
         powerDisplay.Start();
         sparks.Stop();
+        beamOn.Stop();
+        beamSound.Stop();
+        beamOff.Stop();
+        beamBurn.Stop();
     }
 
     void LaserOn()
     {
         laserBeam.enabled = true;
+        Debug.Log("LaserOn calling beamOn.Play next");
         beamOn.Play();
         beamSound.Play();
         beamBurn.Play();
@@ -45,15 +50,15 @@ public class Laserbeam : MonoBehaviour
     {
         laserBeam.enabled = false;
         sparks.Stop();
+        Debug.Log("LaserOff calling beamOn.Play next");
+        beamOn.Play();
         beamSound.Stop();
-        beamOff.Play();
         beamBurn.Stop();
     }
 
     // Update is called once per frame
     void Update()
     {
-        bool firing = Input.GetButton("Fire1");
         if (lastHit != null)
         {
             var hitMeshRenderer = lastHit.GetComponent<MeshRenderer>();
@@ -61,12 +66,13 @@ public class Laserbeam : MonoBehaviour
             lastHit = null;
         }
 
-        if (powerDisplay.Get() > 0 && firing && Time.deltaTime > 0)
+        if (!laserBeam.enabled && Input.GetButtonDown("Fire1") && powerDisplay.Get() > 0 && Time.deltaTime > 0)
         {
+            Debug.Log("Turning laser on");
             LaserOn();
         }
 
-        if (powerDisplay.Get() == 0 || !firing)
+        if (laserBeam.enabled && (powerDisplay.Get() == 0 || Input.GetButtonUp("Fire1")))
         {
             LaserOff();
         }
