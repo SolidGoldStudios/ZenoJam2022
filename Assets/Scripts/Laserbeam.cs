@@ -13,9 +13,14 @@ public class Laserbeam : MonoBehaviour
     public float laserDuration;
     public float fireRate = 0.2f;
     public ParticleSystem sparks;
+    public AudioSource beamSound;
+    public AudioSource beamOn;
+    public AudioSource beamOff;
+    public AudioSource beamBurn;
     
     private LineRenderer laserBeam;
     private float fireTimer;
+    private bool laserOff = true;
     
 
     // private GameObject lastHit;
@@ -33,13 +38,19 @@ public class Laserbeam : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && fireTimer > fireRate)
         {
             laserBeam.enabled = true;
+            beamOn.Play();
+            beamSound.Play();
+            beamBurn.Play();
         }
 
         if (Input.GetButtonUp("Fire1"))
         {
-            laserBeam.enabled = false;
             fireTimer = 0;
+            laserBeam.enabled = false;
             sparks.Stop();
+            //beamOff.Play();
+            beamSound.Stop();
+            beamBurn.Stop();
             // lastHit = null;
         }
         
@@ -50,8 +61,7 @@ public class Laserbeam : MonoBehaviour
             beamPositions[0] = laserOrigin.position;
             Vector3 rayOrigin = mainCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0));
             RaycastHit hit;
-            
-            
+
             if (Physics.Raycast(rayOrigin, mainCamera.transform.forward, out hit, laserRange))
             {   
                 beamPositions[1] = hit.point;
@@ -71,7 +81,6 @@ public class Laserbeam : MonoBehaviour
                 beamPositions[1] = rayOrigin + (mainCamera.transform.forward * laserRange);
                 sparks.Stop();
             }
-            
             laserBeam.SetPositions(beamPositions);
         }
     }

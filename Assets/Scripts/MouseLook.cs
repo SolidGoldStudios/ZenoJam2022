@@ -20,9 +20,9 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")) tracking = true;
+        // if (Input.GetButtonDown("Fire1")) tracking = true;
 
-        if (!tracking) return;
+        // if (!tracking) return;
         
         float mouseX = Input.GetAxis("Mouse X") * mouseSense * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSense * Time.deltaTime;
