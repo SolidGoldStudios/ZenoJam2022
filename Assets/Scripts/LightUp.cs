@@ -12,11 +12,13 @@ public class LightUp : MonoBehaviour
     public GameObject[] switchTargets;
 
     private bool switchFlipped = false;
+    private AudioSource audioSource;
 
     void Start()
     {
         mat = gameObject.GetComponent<MeshRenderer>().material;
         mat.SetColor("_EmissionColor", Color.black);
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -28,6 +30,8 @@ public class LightUp : MonoBehaviour
             if (intensity < 0) intensity = 0;
 
             mat.SetColor("_EmissionColor", color * intensity);
+
+            if (audioSource) audioSource.mute = intensity < 1f;
         }
     }
 
@@ -45,9 +49,10 @@ public class LightUp : MonoBehaviour
                 if (mov) mov.Move();           
 
                 LightUp lu = go.GetComponent<LightUp>();
-                if (lu) lu.SwitchOn();     
+                if (lu) lu.SwitchOn();
             }
 
+            if (audioSource) audioSource.mute = intensity < 1f;
             switchFlipped = true;
         }
     }
@@ -57,5 +62,6 @@ public class LightUp : MonoBehaviour
         switchFlipped = true;
         intensity = 3f;
         mat.SetColor("_EmissionColor", color * intensity);
+        if (audioSource) audioSource.mute = false;
     }
 }

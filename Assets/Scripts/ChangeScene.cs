@@ -8,6 +8,6 @@ public class ChangeScene : MonoBehaviour
     public int toScene;
 
     void OnTriggerEnter(Collider collider) {
-         SceneManager.LoadScene(sceneBuildIndex:1);        
+         SceneManager.LoadScene(sceneBuildIndex:toScene);        
     }
 }
