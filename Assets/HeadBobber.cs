@@ -49,6 +49,7 @@ public class HeadBobber : MonoBehaviour
         if (playerController.transform.position != playerLastPosition && playerController.isGrounded)
         {
             PlayMotion(FootstepMotion());
+
         }
         else
         {

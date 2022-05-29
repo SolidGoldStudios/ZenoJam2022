@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    public AudioSource footSteps;
     
     public float speed = 12f;
     public float gravity = -9.81f;
@@ -36,6 +37,24 @@ public class PlayerMovement : MonoBehaviour
             
         //controller.SimpleMove(Time.deltaTime * move * speed);
         Vector3 movement = Vector3.zero;
+
+        if ((Input.GetButton("Horizontal") || Input.GetButton("Vertical")) && isGrounded)
+        {
+            if (!footSteps.isPlaying)
+            {
+                footSteps.Play();
+            }
+        }
+
+        if (!isGrounded && footSteps.isPlaying)
+        {
+            footSteps.Stop();
+        }
+        
+        if (Input.GetButtonUp("Horizontal") || Input.GetButtonUp("Vertical"))
+        {
+            footSteps.Stop();
+        }
         
         controller.Move(Time.deltaTime * speed * (transform.forward * Input.GetAxis("Vertical") +
                                           transform.right * Input.GetAxis("Horizontal")));
