@@ -109,12 +109,12 @@ public class PowerDisplay : MonoBehaviour
 
         if (currentPower == 0)
         {
-            powerText.fontSharedMaterial.SetFloat("_GlowPower", 1);
+            powerText.fontMaterial.SetFloat("_GlowPower", 1);
             powerText.UpdateMeshPadding();
         }
         else
         {
-            powerText.fontSharedMaterial.SetFloat("_GlowPower", 0);
+            powerText.fontMaterial.SetFloat("_GlowPower", 0);
             powerText.UpdateMeshPadding();
         }
     }

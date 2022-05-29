@@ -3024,10 +3024,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1415395263838933362, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
-      propertyPath: mouseSense
-      value: 200
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
 --- !u!1001 &1184972929
