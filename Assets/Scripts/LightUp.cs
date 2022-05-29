@@ -75,8 +75,6 @@ public class LightUp : MonoBehaviour
         intensity = 3f;
         mat.SetColor("_EmissionColor", color * intensity);
 
-        foreach (Light light in lights) light.intensity = 2;
-
         if (audioSource) {
             audioSource.mute = false;
             audioSource.volume = 0;
@@ -88,7 +86,10 @@ public class LightUp : MonoBehaviour
     {
         for (int i = 0; i < 100; i++) {
             audioSource.volume = (float)i / 100f;
-            yield return new WaitForEndOfFrame();
+
+            foreach (Light light in lights) light.intensity = (float)i / 10f;
+
+            yield return new WaitForSeconds(0.1f);
         }
     }
 }
