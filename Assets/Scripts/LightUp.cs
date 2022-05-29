@@ -9,7 +9,7 @@ public class LightUp : MonoBehaviour
     public float intensity = 0;
     public float duration;
     public bool isSwitch;
-    public GameObject switchTarget;
+    public GameObject[] switchTargets;
 
     private bool switchFlipped = false;
 
@@ -39,10 +39,23 @@ public class LightUp : MonoBehaviour
         }
 
         if (intensity > 1f && isSwitch && !switchFlipped) {
-            MoveableObject mov = switchTarget.GetComponent<MoveableObject>();
-            if (mov) mov.Move();
+            foreach (GameObject go in switchTargets)
+            {
+                MoveableObject mov = go.GetComponent<MoveableObject>();
+                if (mov) mov.Move();           
+
+                LightUp lu = go.GetComponent<LightUp>();
+                if (lu) lu.SwitchOn();     
+            }
 
             switchFlipped = true;
         }
+    }
+
+    public void SwitchOn()
+    {
+        switchFlipped = true;
+        intensity = 3f;
+        mat.SetColor("_EmissionColor", color * intensity);
     }
 }
