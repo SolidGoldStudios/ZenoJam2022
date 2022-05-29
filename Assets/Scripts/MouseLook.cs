@@ -21,8 +21,6 @@ public class MouseLook : MonoBehaviour
 
         if (Mathf.Abs(mouseX) > 500 || Mathf.Abs(mouseY) > 500) return;
 
-        Debug.Log("mouseX " + mouseX + " mouseY " + mouseY);
-        
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
