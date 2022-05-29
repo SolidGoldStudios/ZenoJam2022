@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class LightUp : MonoBehaviour
 {
-    public Material mat;
+    private Material mat;
     public Color color;
     public float intensity = 0;
 
     void Start()
     {
+        mat = gameObject.GetComponent<MeshRenderer>().material;
         mat.SetColor("_EmissionColor", Color.black);
     }
 

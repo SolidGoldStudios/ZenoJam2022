@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.40567017, g: 0.41361874, b: 0.4517913, a: 1}
+  m_IndirectSpecularColor: {r: 0.40567017, g: 0.4136187, b: 0.45179135, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -493,7 +493,7 @@ PrefabInstance:
     - target: {fileID: 1515284453, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: lightTarget
       value: 
-      objectReference: {fileID: 2067345493}
+      objectReference: {fileID: 928740699}
     - target: {fileID: 8390785030945888294, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: m_Name
       value: spider_brown (16)
@@ -833,7 +833,7 @@ PrefabInstance:
     - target: {fileID: 1515284453, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: lightTarget
       value: 
-      objectReference: {fileID: 2067345493}
+      objectReference: {fileID: 928740699}
     - target: {fileID: 8390785030945888294, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: m_Name
       value: spider_brown (11)
@@ -1171,7 +1171,7 @@ PrefabInstance:
     - target: {fileID: 1515284453, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: lightTarget
       value: 
-      objectReference: {fileID: 2067345493}
+      objectReference: {fileID: 928740699}
     - target: {fileID: 8390785030945888294, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: m_Name
       value: spider_brown (17)
@@ -2097,6 +2097,96 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
+--- !u!1001 &928740698
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6658922108645647395, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
+      propertyPath: m_Name
+      value: Lightbox (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658922108645647399, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658922108645647399, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658922108645647399, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658922108645647399, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658922108645647399, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -70.40611
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658922108645647399, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658922108645647399, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658922108645647399, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658922108645647399, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658922108645647399, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658922108645647399, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658922108645647399, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658922108645647399, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658922108645647399, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
+--- !u!1 &928740699 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6658922108645647395, guid: 67b66951c505fb04cb8ea3f8ba255a3a, type: 3}
+  m_PrefabInstance: {fileID: 928740698}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &928740700
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928740699}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.75, y: 0.5, z: 0.75}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.5, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!4 &953602723 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9167602793266119324, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
@@ -2326,7 +2416,7 @@ PrefabInstance:
     - target: {fileID: 1515284453, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: lightTarget
       value: 
-      objectReference: {fileID: 2067345493}
+      objectReference: {fileID: 928740699}
     - target: {fileID: 8390785030945888294, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: m_Name
       value: spider_brown (18)
@@ -2454,7 +2544,7 @@ PrefabInstance:
     - target: {fileID: 1515284453, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: lightTarget
       value: 
-      objectReference: {fileID: 2067345493}
+      objectReference: {fileID: 928740699}
     - target: {fileID: 8390785030945888294, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: m_Name
       value: spider_brown (14)
@@ -2617,7 +2707,7 @@ PrefabInstance:
     - target: {fileID: 1515284453, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: lightTarget
       value: 
-      objectReference: {fileID: 2067345493}
+      objectReference: {fileID: 928740699}
     - target: {fileID: 8390785030945888294, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: m_Name
       value: spider_brown (13)
@@ -2678,7 +2768,7 @@ PrefabInstance:
     - target: {fileID: 1515284453, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: lightTarget
       value: 
-      objectReference: {fileID: 2067345493}
+      objectReference: {fileID: 928740699}
     - target: {fileID: 8390785030945888294, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: m_Name
       value: spider_brown (19)
@@ -2866,7 +2956,7 @@ PrefabInstance:
     - target: {fileID: 1515284453, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: lightTarget
       value: 
-      objectReference: {fileID: 2067345493}
+      objectReference: {fileID: 928740699}
     - target: {fileID: 8390785030945888294, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: m_Name
       value: spider_brown (10)
@@ -2927,7 +3017,7 @@ PrefabInstance:
     - target: {fileID: 1515284453, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: lightTarget
       value: 
-      objectReference: {fileID: 2067345493}
+      objectReference: {fileID: 928740699}
     - target: {fileID: 8390785030945888294, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: m_Name
       value: spider_brown (15)
@@ -4267,7 +4357,7 @@ PrefabInstance:
     - target: {fileID: 1515284453, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: lightTarget
       value: 
-      objectReference: {fileID: 2067345493}
+      objectReference: {fileID: 928740699}
     - target: {fileID: 8390785030945888294, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: m_Name
       value: spider_brown (12)
