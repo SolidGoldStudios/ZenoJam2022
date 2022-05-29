@@ -10,7 +10,7 @@ public class MusicManager : MonoBehaviour
     void Start()
     {
         foreach (AudioSource audioSource in audioSources) {
-            //audioSource.Play();
+            audioSource.Play();
         }
     }
 }
