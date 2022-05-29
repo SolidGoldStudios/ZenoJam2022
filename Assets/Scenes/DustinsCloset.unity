@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 116158547172247fb87ea976257e94be, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 28ff985419326d2489b37682a76e05c2, type: 2}
 --- !u!1 &169611136
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,6 +354,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 585466965}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!82 &610559878 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 610559878, guid: e9d5e4db4517647cba995304d0c3a506, type: 3}
+  m_PrefabInstance: {fileID: 4744404430467949441}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &648970874
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,6 +745,11 @@ Transform:
   m_Father: {fileID: 169611137}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1114691311 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1114691311, guid: 6d33fa8a4b96544b2846718c5f0ab2ff, type: 3}
+  m_PrefabInstance: {fileID: 7838495785873051324}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1399688330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -757,15 +767,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 973502668456243148, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -19.26
       objectReference: {fileID: 0}
     - target: {fileID: 973502668456243148, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1
+      value: 5.68
       objectReference: {fileID: 0}
     - target: {fileID: 973502668456243148, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.091
+      value: -5.02
       objectReference: {fileID: 0}
     - target: {fileID: 973502668456243148, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
       propertyPath: m_LocalRotation.w
@@ -795,10 +805,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4716764423135501172, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
-      propertyPath: mouseSense
-      value: 200
-      objectReference: {fileID: 0}
+    - target: {fileID: 9179279873314738247, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
+      propertyPath: audioSources.Array.data[0]
+      value: 
+      objectReference: {fileID: 610559878}
+    - target: {fileID: 9179279873314738247, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
+      propertyPath: audioSources.Array.data[1]
+      value: 
+      objectReference: {fileID: 1114691311}
+    - target: {fileID: 9179279873314738247, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
+      propertyPath: audioSources.Array.data[2]
+      value: 
+      objectReference: {fileID: 1950188899}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
 --- !u!1 &1525484925
@@ -1045,6 +1063,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935075988}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!82 &1950188899 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1950188899, guid: 57a3057abcaf64528b91d96461442693, type: 3}
+  m_PrefabInstance: {fileID: 4467740755674811305}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4467740755674811305
 PrefabInstance:
   m_ObjectHideFlags: 0
