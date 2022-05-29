@@ -1356,7 +1356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e071538f489bf54db946353e57d8b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {x: -11.1, y: 10.7, z: 144.2978}
+  targetPosition: {x: -11.1, y: 11, z: 144.2978}
   duration: 5
 --- !u!65 &596601243
 BoxCollider:
@@ -3147,8 +3147,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593774392}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -47.6188, y: 11.4793, z: -26.2}
-  m_LocalScale: {x: 0.96464, y: 24.397501, z: 221.00085}
+  m_LocalPosition: {x: -4.3783, y: 28.5591, z: -26.2}
+  m_LocalScale: {x: 0.96464, y: 58.556442, z: 134.52321}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 169611137}
