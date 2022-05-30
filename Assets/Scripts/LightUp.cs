@@ -50,7 +50,7 @@ public class LightUp : MonoBehaviour
             intensity += Time.deltaTime;
         }
 
-        if (intensity > 1f && isSwitch && !switchFlipped) {
+        if (intensity > .6f && isSwitch && !switchFlipped) {
             foreach (GameObject go in switchTargets)
             {
                 MoveableObject mov = go.GetComponent<MoveableObject>();
