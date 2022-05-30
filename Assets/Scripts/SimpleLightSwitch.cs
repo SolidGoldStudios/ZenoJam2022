@@ -15,7 +15,7 @@ public class SimpleLightSwitch : MonoBehaviour
     void Start()
     {
         mat = gameObject.GetComponent<MeshRenderer>().material;
-        mat.SetColor("_EmissionColor", Color.black);
+        mat.SetColor("_EmissionColor", Color.blackgit checkout);
         audioSource = gameObject.GetComponent<AudioSource>();
     }
 
@@ -27,7 +27,7 @@ public class SimpleLightSwitch : MonoBehaviour
             mat.SetColor("_EmissionColor", color * intensity);
         }
 
-        if (intensity > 1f && !switchFlipped) {
+        if (intensity > .5f && !switchFlipped) {
             foreach (GameObject go in switchTargets)
             {
                 MoveableObject mov = go.GetComponent<MoveableObject>();
