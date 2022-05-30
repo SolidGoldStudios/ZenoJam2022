@@ -21,7 +21,6 @@ public class TimerGate : MonoBehaviour
     {
         if (moving) {
             float t = (Time.time - startTime) / duration;
-            Debug.Log("t = " + t);
             if (t >= 0 && t <= 1) {
                 transform.position = Vector3.Lerp(startPosition, targetPosition, t);
             } else {
