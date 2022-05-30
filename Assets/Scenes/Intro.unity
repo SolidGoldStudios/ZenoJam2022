@@ -130,14 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1306996785, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
-      propertyPath: rechargeDelay
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1306996785, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
-      propertyPath: rechargeAmount
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 973502668456243139, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
       propertyPath: m_Name
       value: Player

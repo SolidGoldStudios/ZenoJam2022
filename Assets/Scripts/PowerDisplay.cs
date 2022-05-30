@@ -127,7 +127,6 @@ public class PowerDisplay : MonoBehaviour
 
         if (currentPower == minPower && ShouldRecharge(rechargeTime))
         {
-            Debug.Log("Recharging?");
             Set(rechargeAmount);
             SetText($"{startingText} {Math.Round(currentPower)}");
         }
