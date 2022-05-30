@@ -1,0 +1,40 @@
+# Wavefront .mtl file  -  created by SpaceDraw
+
+# File created: 20-04-22, 13:02
+
+newmtl jonathan-provencal-sol
+Ns 69.8
+d 1.0
+Tr 0.0
+illum 2
+Ka 0.64699996 0.64699996 0.64699996 
+Kd 0.64699996 0.64699996 0.64699996 
+Ks 0.6784 0.6784 0.6784 
+Ke 0.1647 0.1647 0.1647 
+map_Ka jonathan-provencal-sol.jpg
+map_Kd jonathan-provencal-sol.jpg
+
+newmtl box steel 2
+Ns 67.5
+d 1.0
+Tr 0.0
+illum 2
+Ka 0.8196 0.8196 0.8196 
+Kd 0.8196 0.8196 0.8196 
+Ks 0.50189996 0.50189996 0.50189996 
+Ke 0.0 0.0 0.0 
+map_Ka e1c3b2fcac49bb63bed05d6067be3dc8.jpg
+map_Kd e1c3b2fcac49bb63bed05d6067be3dc8.jpg
+
+newmtl box steel 3
+Ns 70.9
+d 1.0
+Tr 0.0
+illum 2
+Ka 0.7215 0.7215 0.7215 
+Kd 0.7215 0.7215 0.7215 
+Ks 0.50189996 0.50189996 0.50189996 
+Ke 0.0 0.0 0.0 
+map_Ka 87c54bdb19e9c7faba8a03400adc4062.jpg
+map_Kd 87c54bdb19e9c7faba8a03400adc4062.jpg
+
