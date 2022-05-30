@@ -15,7 +15,7 @@ public class SimpleLightSwitch : MonoBehaviour
     void Start()
     {
         mat = gameObject.GetComponent<MeshRenderer>().material;
-        mat.SetColor("_EmissionColor", Color.blackgit checkout);
+        mat.SetColor("_EmissionColor", Color.black);
         audioSource = gameObject.GetComponent<AudioSource>();
     }
 
