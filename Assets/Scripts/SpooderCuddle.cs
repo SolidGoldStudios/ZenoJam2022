@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using System.Collections;
 
 public class SpooderCuddle : MonoBehaviour
@@ -8,6 +9,11 @@ public class SpooderCuddle : MonoBehaviour
     public AudioSource spiderBite;
     private readonly float rotateSpeed = 360f;
     private bool triggered = false;
+    private Image image;
+
+    void Start() {
+        image = GameObject.Find("YouDead").GetComponent<Image>();
+    }
 
     void OnTriggerEnter(Collider collider)
     {
@@ -48,6 +54,7 @@ public class SpooderCuddle : MonoBehaviour
 
     IEnumerator RealizeDeath(float time, Action task)
     {
+        image.enabled = true;
         yield return new WaitForSeconds(time);
         task();
     }
