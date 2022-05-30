@@ -8143,13 +8143,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5746112556280225558, guid: 960cc41cb43db48bbb7a15de4c4bbee9, type: 3}
+      propertyPath: MaxDistance
+      value: 15.144493
+      objectReference: {fileID: 0}
     - target: {fileID: 6594809375020506617, guid: 960cc41cb43db48bbb7a15de4c4bbee9, type: 3}
       propertyPath: m_LocalPosition.z
       value: 5.31
       objectReference: {fileID: 0}
     - target: {fileID: 6594809375020506617, guid: 960cc41cb43db48bbb7a15de4c4bbee9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1.06
+      value: 2.93
       objectReference: {fileID: 0}
     - target: {fileID: 6594809375020506617, guid: 960cc41cb43db48bbb7a15de4c4bbee9, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -8673,11 +8677,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9120397306771928629, guid: 8180ec8fcc70d481bbaa881ae0dd0f71, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2.79
+      value: -3.85
       objectReference: {fileID: 0}
     - target: {fileID: 9120397306771928629, guid: 8180ec8fcc70d481bbaa881ae0dd0f71, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.72
+      value: -3.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8180ec8fcc70d481bbaa881ae0dd0f71, type: 3}
