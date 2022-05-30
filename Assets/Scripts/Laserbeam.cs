@@ -31,7 +31,6 @@ public class Laserbeam : MonoBehaviour
         laserBeam = GetComponent<LineRenderer>();
         powerDisplay.Start();
         sparks.Stop();
-        beamOn.Stop();
         beamSound.Stop();
         beamOff.Stop();
         beamBurn.Stop();
@@ -40,7 +39,7 @@ public class Laserbeam : MonoBehaviour
     void LaserOn()
     {
         laserBeam.enabled = true;
-        beamOn.Play();
+        beamOff.Play();
         beamSound.Play();
         beamBurn.Play();
     }
@@ -49,7 +48,7 @@ public class Laserbeam : MonoBehaviour
     {
         laserBeam.enabled = false;
         sparks.Stop();
-        beamOn.Play();
+        beamOff.Play();
         beamSound.Stop();
         beamBurn.Stop();
     }
