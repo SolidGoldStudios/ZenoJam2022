@@ -1019,7 +1019,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddafb5df09504420691bcbdbc6f7ccf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0, g: 0.83137256, b: 1, a: 1}
+  color: {r: 0.514151, g: 0.9180724, b: 1, a: 1}
+  startColor: {r: 0.06505874, g: 0.12188009, b: 0.3207547, a: 0}
   intensity: 0
   switchTargets:
   - {fileID: 0}
