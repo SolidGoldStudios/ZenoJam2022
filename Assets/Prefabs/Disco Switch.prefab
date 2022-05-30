@@ -1036,7 +1036,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
-  levitate: 0
+  levitate: 2
+  amplitude: 0.25
 --- !u!64 &6100446958663438693
 MeshCollider:
   m_ObjectHideFlags: 0
