@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     public AudioSource footSteps;
+    public bool immobilized = false;
 
     public float speed = 12f;
     public float walk = 12f;
@@ -20,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 velocity;
     private bool isGrounded;
+
     void Awake()
     {
         QualitySettings.vSyncCount = 0;  // VSync must be disabled
@@ -30,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (immobilized) return;
+        
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
