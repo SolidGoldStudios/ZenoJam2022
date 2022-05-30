@@ -180,9 +180,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
---- !u!114 &133664970 stripped
+--- !u!114 &133664971 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7689155289891562244, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
+  m_CorrespondingSourceObject: {fileID: 133664971, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
   m_PrefabInstance: {fileID: 133664969}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toScene: 1
-  fadeSceneScript: {fileID: 133664970}
+  fadeSceneScript: {fileID: 133664971}
 --- !u!82 &217619340
 AudioSource:
   m_ObjectHideFlags: 0
