@@ -62,6 +62,7 @@ public class Laserbeam : MonoBehaviour
         if (lastHit != null)
         {
             var hitMeshRenderer = lastHit.GetComponent<MeshRenderer>();
+            var shieldSound = lastHit.GetComponent<AudioSource>();
             hitMeshRenderer.enabled = false;
             lastHit = null;
         }
@@ -95,9 +96,16 @@ public class Laserbeam : MonoBehaviour
                 if (hitObject.CompareTag("Spider"))
                 {
                     var hitMeshRenderer = hitObject.GetComponent<MeshRenderer>();
+                    var shieldSound = hitObject.GetComponent<AudioSource>();
                     if (hitMeshRenderer != null)
                     {
                         hitMeshRenderer.enabled = true;
+
+                        if (!shieldSound.isPlaying)
+                        {
+                            shieldSound.Play();
+                        }
+                            
                     }
 
                     lastHit = hit.transform;
