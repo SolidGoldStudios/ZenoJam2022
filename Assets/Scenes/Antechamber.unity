@@ -5633,6 +5633,10 @@ PrefabInstance:
       propertyPath: lightTarget
       value: 
       objectReference: {fileID: 558172357}
+    - target: {fileID: 1544458857393592320, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
+      propertyPath: m_Volume
+      value: 0.156
+      objectReference: {fileID: 0}
     - target: {fileID: 8390785030945888294, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: m_Name
       value: spider_brown
