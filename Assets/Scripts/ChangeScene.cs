@@ -6,8 +6,13 @@ using UnityEngine.SceneManagement;
 public class ChangeScene : MonoBehaviour
 {
     public int toScene;
+    public SceneTransitionFade fadeSceneScript;
 
     void OnTriggerEnter(Collider collider) {
-         SceneManager.LoadScene(sceneBuildIndex:toScene);        
+        if (fadeSceneScript != null) {
+            fadeSceneScript.FadeOut(toScene);
+        } else {
+            SceneManager.LoadScene(sceneBuildIndex:toScene);
+        }
     }
 }
