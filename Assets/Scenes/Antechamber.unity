@@ -4583,14 +4583,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3740580953929454516, guid: cc0b562d890e4473f9e11d8a6ac2d3d5, type: 3}
+      propertyPath: switchTargets.Array.data[0]
+      value: 
+      objectReference: {fileID: 718138393}
     - target: {fileID: 8850515033053650603, guid: cc0b562d890e4473f9e11d8a6ac2d3d5, type: 3}
       propertyPath: m_Name
       value: Disco Switch
       objectReference: {fileID: 0}
-    - target: {fileID: 8851810616385839793, guid: cc0b562d890e4473f9e11d8a6ac2d3d5, type: 3}
-      propertyPath: switchTargets.Array.data[0]
-      value: 
-      objectReference: {fileID: 718138393}
     - target: {fileID: 8851980965628769651, guid: cc0b562d890e4473f9e11d8a6ac2d3d5, type: 3}
       propertyPath: m_RootOrder
       value: 7

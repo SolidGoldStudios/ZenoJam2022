@@ -6,6 +6,7 @@ public class SimpleLightSwitch : MonoBehaviour
 {
     private Material mat;
     public Color color;
+    public Color startColor;
     public float intensity = 0;
     public GameObject[] switchTargets;
 
@@ -15,7 +16,7 @@ public class SimpleLightSwitch : MonoBehaviour
     void Start()
     {
         mat = gameObject.GetComponent<MeshRenderer>().material;
-        mat.SetColor("_EmissionColor", Color.black);
+        mat.SetColor("_EmissionColor", startColor);
         audioSource = gameObject.GetComponent<AudioSource>();
     }
 
