@@ -1030,8 +1030,8 @@ GameObject:
   - component: {fileID: 3599728267852658200}
   - component: {fileID: 8116211256060778860}
   - component: {fileID: 5803625688505554991}
-  - component: {fileID: 6571468299656283104}
   - component: {fileID: 8659150756734549091}
+  - component: {fileID: 951524861}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Spider
@@ -1047,7 +1047,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4464070370552620808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.2, z: 0}
+  m_LocalPosition: {x: 0, y: 2.53, z: 0}
   m_LocalScale: {x: 18, y: 17, z: 18}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1112,23 +1112,11 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4464070370552620808}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.55
   m_Center: {x: 0.00000047683716, y: 0, z: 0}
---- !u!114 &6571468299656283104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4464070370552620808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2d718ee3ed4e464381b2fb349fa3669, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &8659150756734549091
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1225,6 +1213,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &951524861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4464070370552620808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b9a6f2d173703543b8b55e88173ce1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4572401896420943237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1664,8 +1664,6 @@ GameObject:
   m_Component:
   - component: {fileID: 168812001849548839}
   - component: {fileID: 4583829082828862426}
-  - component: {fileID: 943804710073174895}
-  - component: {fileID: 2022724511964683847}
   m_Layer: 0
   m_Name: Spider.001
   m_TagString: Untagged
@@ -1779,31 +1777,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00010666717, y: 0.0054854373, z: 0.0024398682}
     m_Extent: {x: 0.019547112, y: 0.016542029, z: 0.009858215}
   m_DirtyAABB: 0
---- !u!114 &943804710073174895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6652329875317964918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b9a6f2d173703543b8b55e88173ce1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!65 &2022724511964683847
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6652329875317964918}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.15357478, y: 0.13583891, z: 0.0986894}
-  m_Center: {x: 0.000940638, y: -0.0052206814, z: 0.029840939}
 --- !u!1 &6767965374878161803
 GameObject:
   m_ObjectHideFlags: 0
@@ -2131,7 +2104,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8390785030945888294}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: a96ff394aa19efb4bbcd55446aefd7db, type: 2}
   m_Controller: {fileID: 9100000, guid: 3f84ca341c1b1844eb99afcd13998555, type: 2}
   m_CullingMode: 0
@@ -2150,7 +2123,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8390785030945888294}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2e77da981658dd45ba0c9218b8b193c, type: 3}
   m_Name: 
@@ -2165,7 +2138,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8390785030945888294}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 100
