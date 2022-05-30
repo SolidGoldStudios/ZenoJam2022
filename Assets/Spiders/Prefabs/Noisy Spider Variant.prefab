@@ -11,13 +11,21 @@ PrefabInstance:
       propertyPath: lightTarget
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1544458857393592320, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
+      propertyPath: m_Volume
+      value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544458857393592320, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.967
+      objectReference: {fileID: 0}
     - target: {fileID: 4591746036333136125, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: m_Name
       value: Noisy Spider
       objectReference: {fileID: 0}
     - target: {fileID: 8390785030945888294, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: m_Name
-      value: Noisy Spider
+      value: Noisy Spider Variant
       objectReference: {fileID: 0}
     - target: {fileID: 9167602793266119324, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
       propertyPath: m_RootOrder

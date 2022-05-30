@@ -345,7 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 0, g: 0.7046585, b: 0.9622642, a: 0}
   intensity: 0
-  duration: 15
+  duration: 25
   isSwitch: 0
   switchTargets: []
 --- !u!82 &610559878

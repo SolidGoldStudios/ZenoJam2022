@@ -2562,7 +2562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cc62465c814baa14faf161a60943f1eb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -162.9
+      value: -201
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cc62465c814baa14faf161a60943f1eb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4290,6 +4290,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654822640}
   m_Mesh: {fileID: 4300000, guid: 29025fd68bcc2c04b8d1205d2e5bf050, type: 3}
+--- !u!114 &665119549 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1422293808836246403, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
+  m_PrefabInstance: {fileID: 1107313377}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &673156589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5289,6 +5300,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &761293405
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761293402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.4122689, y: 2.2390554, z: 3.8455842}
+  m_Center: {x: 0.433519, y: 0.6195283, z: 0.17287742}
+--- !u!114 &761293406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761293402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd829672026e4f4586c19012ae8e5fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 665119549}
 --- !u!1001 &762480010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7594,6 +7631,14 @@ PrefabInstance:
     - target: {fileID: 973502668478538885, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
       propertyPath: m_LocalPosition.y
       value: 2.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314335143438802598, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314335143438802598, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9179279873314738247, guid: 152a2184f2ed74a4fba0b26c548f3b18, type: 3}
       propertyPath: audioSources.Array.size
