@@ -332,8 +332,8 @@ MonoBehaviour:
   maxPower: 100
   startingText: 'Power:'
   startingPower: 100
-  rechargeAmount: 0
-  rechargeDelay: 0
+  rechargeAmount: 20
+  rechargeDelay: 3
 --- !u!1 &1525484925
 GameObject:
   m_ObjectHideFlags: 0

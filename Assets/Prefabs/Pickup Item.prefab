@@ -225,7 +225,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2228700299568389102
 MonoBehaviour:
@@ -239,6 +239,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d57b29847dc849e2ad16640170947e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  batteryValue: 0
+  batteryValue: 100
   powerDisplay: {fileID: 0}
-  pickUpSound: {fileID: 50668329595038405}
