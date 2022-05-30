@@ -40,7 +40,7 @@ public class SpooderCuddle : MonoBehaviour
         }
 
 
-        StartCoroutine(RealizeDeath(1, () =>
+        StartCoroutine(RealizeDeath(2, () =>
         {
             Die();
         }));
