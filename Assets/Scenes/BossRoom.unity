@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.126, g: 0.126, b: 0.126, a: 0.19215687}
+  m_FogColor: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -6429,8 +6429,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9a6f2d173703543b8b55e88173ce1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spiderBite: {fileID: 0}
-  rotateSpeed: 360
 --- !u!65 &1265573419
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8859,8 +8857,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9a6f2d173703543b8b55e88173ce1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spiderBite: {fileID: 0}
-  rotateSpeed: 360
 --- !u!4 &1898084661 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9167602793266119324, guid: 31ecbe2a1041ed848a499132cd1b1460, type: 3}
