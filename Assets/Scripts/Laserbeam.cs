@@ -114,6 +114,8 @@ public class Laserbeam : MonoBehaviour
                 LightUp lightUp = hit.transform.GetComponent<LightUp>();
                 if (lightUp) lightUp.Glow();
 
+                SimpleLightSwitch simpleLightSwitch = hit.transform.GetComponent<SimpleLightSwitch>();
+                if (simpleLightSwitch) simpleLightSwitch.Glow();
             }
             else
             {
